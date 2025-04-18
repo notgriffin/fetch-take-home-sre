@@ -1,0 +1,35 @@
+[project]
+name = "fetch-take-home-sre"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Griffin Rufe", email = "griffinthesecdev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "click (>=8.1.8,<9.0.0)",
+    "pyyaml (>=6.0.2,<7.0.0)",
+    "aiohttp (>=3.11.16,<4.0.0)",
+    "winloop (>=0.1.8,<0.2.0)",
+    "pydantic (>=2.11.3,<3.0.0)",
+]
+
+[project.scripts]
+monitor_endpoints = 'fetch_take_home_sre.cli:monitor'
+
+[project.urls]
+homepage = "https://www.linkedin.com/in/griffintimm/"
+
+[tool.poetry]
+packages = [{include = "fetch_take_home_sre", from = "src"}]
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.5"
+pytest-asyncio = "^0.26.0"
+pytest-mock = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

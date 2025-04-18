@@ -15,7 +15,7 @@ def check_health(endpoint):
     headers = endpoint.get('headers')
     body = endpoint.get('body')
 
-    try:
+    try: # Method undefined
         response = requests.request(method, url, headers=headers, json=body)
         if 200 <= response.status_code < 300:
             return "UP"
